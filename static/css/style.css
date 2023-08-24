@@ -1,0 +1,157 @@
+body {
+    background-color: #F47B2A;
+    color: #E9EBEC;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: #40E0D0;
+}
+
+.nav-link {
+    color: #E9EBEC;
+}
+
+.brand {
+    font-family: Lato, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #F47B2A;
+}
+
+.slogan {
+    font-size: larger;
+    color: #752D76;
+}
+.thin {
+    font-weight: 300;
+}
+
+.light-bg {
+    background-color: #fff;
+}
+
+.dark-bg {
+    background-color: #C86FC9;
+}
+
+.main-bg {
+    background-color: #F47B2A;
+}
+
+.card {
+    border: none;
+    background-color: transparent;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-flash {
+    position: absolute;
+    bottom: 5%;
+    min-width: 30%;
+    left: -2px;
+    background-color: #40E0D0;
+}
+
+.author {
+    color: #C86FC9;
+    margin: 4px;
+    text-transform: uppercase;
+}
+
+.masthead {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 375px;
+    width: 100%;
+}
+
+.masthead-text {
+    background-color: #C05CC1;
+    color: #40E0D0;
+    position: relative;
+}
+
+.masthead-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.masthead-image:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 90%;
+    height: 100%;
+    width: 150%;
+    background: #C56BC9;
+    -webkit-transform: skew(15deg);
+    -moz-transform: skew(15deg);
+    transform: skew(15deg);
+    z-index: 100;
+}
+
+.post-link {
+    text-decoration: none;
+    color: #4F759B;
+}
+
+.post-link:hover,
+.page-link {
+    color: #E9EBEC;
+}
+
+.post-title {
+    margin-top: 20%;
+    margin-left: 5%;
+}
+
+.post-subtitle {
+    margin-left: 5%;
+    color: lightgray;
+}
+
+.btn-signup {
+    background-color: #23BBBB;
+    color: #E9EBEC;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #fff;
+    color: #752D76;
+}
+
+.link {
+    color: #E9EBEC;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #752D76;
+    text-decoration: underline;
+}
+
+.btn-like {
+    color: #E84610;
+    border: none;
+    background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #E84610;
+    background: transparent;
+    border: none;
+}
+
