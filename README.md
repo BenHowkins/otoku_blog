@@ -24,6 +24,17 @@ The project can be viewed here: [Otaku Blog]()
     - [Project Goals](#project-goals)
     - [User Stories](#user-stories)
     - [Colour Scheme](#colour-scheme)
+2. [Planning](#planning)
+    - [Methodology](#methodology)
+    - [Models](#models)
+    - [Wireframes](#wireframes)
+3. [Features](#features)
+    - [General](#general)
+    - [Home Page](#home-page)
+    - [Post Detail Page](#post-detail-page)
+    - [Register Page](#register-page)
+    - [Login Page](#login-page)
+    - [Logout Page](#logout-page)
 
 
 ## User Experience
@@ -53,4 +64,51 @@ The project can be viewed here: [Otaku Blog]()
 ### Colour Scheme
 The website was designed to have a bright feel to it. This is because it fits in with the general themes assosiated with the content of the reviews (Video Games, Anime, ect)
 
-<image scr="assets/readme/otaku_blog_pallette.png" width="550px"></image>
+<image src="assets/readme/otaku_blog_pallette.png" width="650px"></image>
+
+## Planning
+### Methodology
+
+This project was planned and implemented with agile methodology and principles. This was managed and documented on GitHub Projects.
+
+The GitHub project can be viewed here: [Otoku Blog Project](https://github.com/users/BenHowkins/projects/10)
+
+The EPICS were defined using the GitHub Milestones feature and each User Story was given one of the following milestones:
+- Core Functionality: A feature of the project that is part of the project's core functionality
+- CRUD Functionality: A feature of the project that is part of the project's CRUD functionality
+- Account Management: A feature of the project that is part of the project's account management functionality
+- Site Admin: A function of the project that is part of the site's administrative uses
+
+User Stories contained a list of Acceptance Criteria and Tasks to support the development of the project.
+Following MoSCoW Priortisation principles, each User Story was assigned a tag from one of the following:
+- Must Have
+- Should Have
+- Could Have
+- Won't Have
+
+### Models
+The project uses created two models, Post and Comment. It also uses the Django allauth User model.
+1. The Post model stores the blog post data:
+- author is a foreign key connecting to the User model.
+2. The Comment model stores the data regarding comments made on the blog posts:
+- post is a foreign key connecting to the Post model.
+
+The  entity relationship diagram below was created using [dbdigram](https://dbdiagram.io/home) and demonstrates the relationship between the models. <br>
+<image src="assets/readme/fst_project_diagram" width="650px"></image>
+
+### Wireframes
+
+
+## Features
+
+### General
+
+### Home Page
+
+### Post Detail Page
+
+### Register Page
+
+### Login Page
+
+### Logout Page
