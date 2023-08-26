@@ -16,11 +16,10 @@ import dj_database_url
 from django.contrib.messages import constants as messages
 if os.path.isfile('env.py'):
     import env
- 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -35,8 +34,8 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = [
     'otaku-blog.herokuapp.com', 'localhost',
-    '8000-benhowkins-otoku-blog-88rb2ei4tu.us2.codeanyapp.com',
-]
+    '8000-benhowkins-otoku-blog-ju5ule3vxh.us2.codeanyapp.com'
+    ]
 
 
 # Application definition
@@ -61,7 +60,6 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-ACCOUNT_EMAIL_VERIFICATION = 'none'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
@@ -70,7 +68,7 @@ MESSAGE_TAGS = {
     messages.INFO: 'alert-info',
     messages.SUCCESS: 'alert-success',
     messages.WARNING: 'alert-warning',
-    messages.ERROR: 'alert-danger', 
+    messages.ERROR: 'alert-danger',
 }
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -117,8 +115,8 @@ WSGI_APPLICATION = 'otaku_blog.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-}
+     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+ }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -159,6 +157,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
