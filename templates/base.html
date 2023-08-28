@@ -15,7 +15,7 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
+        </script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
@@ -60,11 +60,10 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissable fade show" id="msg"
-                role="alert">
-                {{ message | safe }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                </button>
+                <div class="alert {{ message.tags }} alert-dismissable fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
                 </div>
 
                 {% endfor %}
@@ -81,14 +80,31 @@
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
         <p class="m-0 text-center text-white">Made by Ben Howkins</p>
-        <p class="m-0 text-center text-white">For Other Reviews Please Check Out:<br>
-            <i class="fa-solid fa-gamepad"><a href="https://www.ign.com/uk">IGN</a></i><br>
-            <i class="fa-solid fa-film"><a href="https://www.rottentomatoes.com/">Rotton Tomatoes</a></i><br>
-            <i class="fal fa-tv fa-sm"><a href="https://myanimelist.net/">MyAnimeList</a></i>
+        <p class="m-0 text-center text-white">For Other Reviews Please Check Out:
+        <ul class="list-inline">
+            <li class="list-item">
+                <a href="https://www.ign.com/uk" target="_blank">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <span>IGN</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="https://www.rottentomatoes.com" target="_blank">
+                    <i class="fa-solid fa-film"></i>
+                    <span>Rotton Tomatoes</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="https://myanimelist.net" target="_blank">
+                    <i class="fal fa-tv fa-sm"></i>
+                    <span>MyAnimeList</span>
+                </a>
+            </li>
+        </ul>
         </p>
     </footer>
     <script>
-        setTimeout(function(){
+        setTimeout(function () {
             let messages = document.getElementById("msg");
             let alert = new bootstrap.Alert(messages);
             alert.close();

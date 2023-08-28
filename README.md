@@ -27,7 +27,6 @@ The project can be viewed here: [Otaku Blog]()
 2. [Planning](#planning)
     - [Methodology](#methodology)
     - [Models](#models)
-    - [Wireframes](#wireframes)
 3. [Features](#features)
     - [General](#general)
     - [Home Page](#home-page)
@@ -35,6 +34,9 @@ The project can be viewed here: [Otaku Blog]()
     - [Register Page](#register-page)
     - [Login Page](#login-page)
     - [Logout Page](#logout-page)
+4. [Technololgies Used](#technologies-used)
+    - [Languages](#languages)
+    - [Frameworks, Libraries and Programmes](#frameworks-libraries-and-programmes)
 
 
 ## User Experience
@@ -94,21 +96,63 @@ The project uses created two models, Post and Comment. It also uses the Django a
 - post is a foreign key connecting to the Post model.
 
 The  entity relationship diagram below was created using [dbdigram](https://dbdiagram.io/home) and demonstrates the relationship between the models. <br>
-<image src="assets/readme/fst_project_diagram" width="650px"></image>
-
-### Wireframes
-
+<image src="assets/readme/fst_project_diagram.png" width="650px"></image>
 
 ## Features
 
 ### General
-
+- The website incorporates a responsive design so it can be used across multiple device sizes.
+- The website uses a consistent colour scheme across the site.
+- Each page has a responsive navigation bar containing the logo and nav menu. The nav bar turns into a burger menu on mobile devices.
+- Each page has a repsonsive footer with helpful links to associated sites. The site links open in a new browser window.
 ### Home Page
-
+- Post List
+  - The home page displays a list of cards of showing the post on the blog.
+  - The cards contains:
+    - The featured image
+    - The author's name
+    - The post's title
+    - THe post excerpt
+    - The published date
+    - Number of likes
+  - The page displays the 6 most recent posts in 2 row of 3 posts.
+  - When more than 6 posts are avaiable the site pagination will cause the page navagtion bar to appear which allows the user to scroll to view older post.
+  - On a mobile device, there will be a single post on each row
 ### Post Detail Page
-
+- The following data displays at the top of the page:
+    - The featured image
+    - The author's name
+    - The post's title
+    - The post excerpt
+    - The published date
+- On a mobile device the featured image doesn't appear on the page.
+- The page displays the review/ post left. 
+- If the user is logged in the 'Leave a comment' box appears and allows user to add a comment on the post. 
+- Users can also like others peoples reviews if they are logged in.
 ### Register Page
-
+- This page displays a form which allows the user to register for an account on Otaku Blog.
 ### Login Page
-
+- This page displays a form which allows the user to log into their Otaku Blog account.
 ### Logout Page
+- This page displays a form which allows the user to log out of their account on Otaku Blog account.
+
+## Technologies Used
+### Languages
+- HTML
+- CSS
+- Javascript
+- Python
+- [Jinja Templating Langugage](https://jinja.palletsprojects.com/en/3.1.x/)
+
+### Frameworks, Libraries and Programmes
+- [Coolers](https://coolors.co/): this was used to create a colour pallete for the website. 
+- [Django](https://www.djangoproject.com/): this was the MVC web framework used.
+- [Bootstrap 5](https://getbootstrap.com/): this was the CSS framework used to make the site responsive. 
+- [Cloudinary](https://cloudinary.com/): this was used to store static and media files.
+- [Codeanywhere](https://app.codeanywhere.com/): this was used to write, commit and to push the code to Github. 
+- [Github](https://github.com/): this was used for version control. 
+- [Heroku](https://dashboard.heroku.com/login): this was used to host and deploy the finished project.
+- [ElephantSQL](https://www.elephantsql.com/): this is the SQL database used in production.
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/): this was used throughout the project to check responsiveness and debug. 
+
+A complete list of packages and dependencies can be viewed in the requirements.txt file. 
