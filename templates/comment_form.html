@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <!-- check that the user is authenticated and that the user is the author of the comment -->
+            {% if user.is_authenticated and user.username == comment.name %}
+
+            <h2>Edit Your Comment: </h2>
+
+            <p>Hi {{ user.username }}, want to make some changes to your Comment?<br>
+                Then go right ahead!!
+            </p>
+            <!-- edit review form -->
+            <form method="post">user
+                {{ comment_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-signup">Update Review</button>
+            </form>
+            {% else %}
+
+            <!-- if they are not authenticated and/or the author, display this message -->
+            <h3>Sorry, this isn't your comment, time to go back home.</h3>
+            <a class="btn btn-signup" href="{% url 'home' %}">Return to home</a>
+        
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

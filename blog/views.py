@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.views.generic.edit import UpdateView
 from django.http import HttpResponseRedirect
-from .models import Post
+from .models import Post, Comment
 from .forms import CommentForm
 
 
@@ -64,6 +65,16 @@ class PostDetail(View):
                 "comment_form": CommentForm()
             },
         )
+
+class EditComment(UpdateView):
+
+    model = Comment
+    template_name = 'comment_edit.html'
+    fields = [
+        "body"
+    ]
+    success_url = '/'
+    
 
 class PostLike(View):
 

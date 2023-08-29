@@ -13,7 +13,7 @@
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <!-- The featured image URL goes in the src attribute -->
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                <img src="https://res.cloudinary.com/dh5fzzg2s/image/upload/v1693310210/otaku_oiew1y.jpg" width="100%">
                 {% else %}
                 <img src=" {{ post.featured_image.url }}" width="100%">
                 {% endif %}
@@ -41,12 +41,12 @@
                                 {% if liked %}
 
                                 <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                                    class="fas fa-heart"></i></button>
+                                        class="fas fa-heart"></i></button>
 
                                 {% else %}
 
                                 <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like"><i
-                                    class="far fa-heart"></i></button>
+                                        class="far fa-heart"></i></button>
 
                                 {% endif %}
 
@@ -92,6 +92,18 @@
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
                 </div>
+                <!-- display edit and delete buttons if the user is the review author -->
+                {% if user.is_authenticated and user.username == comment.name %}
+                <div>
+                    <a class="crud-icon" href="/edit/{{ comment.id }}" aria-label="edit review">
+                        <button class="btn btn-warning">Edit</button>
+                    </a>                      
+                    <a class="crud-icon" href="/delete/{{ comment.id }}" aria-label="delete review">
+                        <button class="btn btn-danger">Delete</button>
+                    </a>                         
+                </div>
+            </row>  
+                {% endif %}
                 <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
