@@ -66,6 +66,7 @@ class PostDetail(View):
             },
         )
 
+
 class EditComment(UpdateView):
 
     model = Comment
@@ -75,11 +76,13 @@ class EditComment(UpdateView):
     ]
     success_url = '/'
 
+
 class DeleteComment(DeleteView):
 
     model = Comment
     template_name = 'comment_delete.html'
     success_url = '/'
+
 
 class PostLike(View):
 
