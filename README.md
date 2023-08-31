@@ -117,6 +117,7 @@ The  entity relationship diagram below was created using [dbdigram](https://dbdi
 - The website uses a consistent colour scheme across the site.
 - Each page has a responsive navigation bar containing the logo and nav menu. The nav bar turns into a burger menu on mobile devices.
 - Each page has a repsonsive footer with helpful links to associated sites. The site links open in a new browser window.
+
 ### Home Page
 - Post List
   - The home page displays a list of cards of showing the post on the blog.
@@ -129,7 +130,10 @@ The  entity relationship diagram below was created using [dbdigram](https://dbdi
     - Number of likes
   - The page displays the 6 most recent posts in 2 row of 3 posts.
   - When more than 6 posts are avaiable the site pagination will cause the page navagtion bar to appear which allows the user to scroll to view older post.
-  - On a mobile device, there will be a single post on each row
+  - On a mobile device, there will be a single post on each row.<br>
+  <image src="assets/readme/home_page_top.png" width="650px"></image><br>
+  <image src="assets/readme/home_page_bottom.png" width="650px"></image>
+
 ### Post Detail Page
 - The following data displays at the top of the page:
     - The featured image
@@ -141,17 +145,30 @@ The  entity relationship diagram below was created using [dbdigram](https://dbdi
 - The page displays the review/ post left. 
 - If the user is logged in the 'Leave a comment' box appears and allows user to add a comment on the post. 
 - Users can also like others peoples reviews if they are logged in.
-- If the user has made a comment then a buttons allowing them to Edit or Delete their comment will be seen.
+- If the user has made a comment then a buttons allowing them to Edit or Delete their comment will be seen.<br>
+<image src="assets/readme/post_detail_page_top.png" width="650px"></image><br>
+<image src="assets/readme/post_detail_page_bottom.png" width="650px"></image>
+
 ### Register Page
-- This page displays a form which allows the user to register for an account on Otaku Blog.
+- This page displays a form which allows the user to register for an account on Otaku Blog.<br>
+<image src="assets/readme/register_page.png" width="650px"></image>
+
 ### Login Page
-- This page displays a form which allows the user to log into their Otaku Blog account.
+- This page displays a form which allows the user to log into their Otaku Blog account.<br>
+<image src="assets/readme/sign_in_page.png" width="650px"></image>
+
 ### Logout Page
-- This page displays a form which allows the user to log out of their account on Otaku Blog account.
+- This page displays a form which allows the user to log out of their account on Otaku Blog account.<br>
+<image src="assets/readme/sign_out_page.png" width="650px"></image>
+
 ### Edit Comment Page
-- This page displays a text box showing the user's current comment which they have wish to edit and allows them to make the alterations before clicking the submit button, editing the comment and sending the user back to the home screen.
+- This page displays a text box showing the user's current comment which they have wish to edit and allows them to make the alterations before clicking the submit button, editing the comment and sending the user back to the home screen.<br>
+<image src="assets/readme/edit_comment_page.png" width="650px"></image>
+
 ### Delete Comment Page
-- This page displays a message tellinging the user that the comment which they have wish to delete will be gone for good and are they wish to continue. If so they click the submit button, deleteing the comment and sending the user back to the home screen.
+- This page displays a message tellinging the user that the comment which they have wish to delete will be gone for good and are they wish to continue. If so they click the submit button, deleteing the comment and sending the user back to the home screen.<br>
+<image src="assets/readme/delete_comment_page.png" width="650px"></image>
+
 ## Technologies Used
 ### Languages
 - HTML
@@ -262,7 +279,17 @@ The website was tested on the following browsers with no issues:
 - Mozilla Firefox
 - Microsoft Edge
 ### Feature Testing
+
 ### Bugs
+#### Resolved Bugs
+1. Authorised Comment User Bug- When creating the buttons for the "Edit" and "Delete" comment functionality I was unable to correctly have it so that only the user who created the comment could edit or delete it. I realised that I had: 
+  1. I only used a single "=" sign in the equalty check.
+  2. I had not used the correct wording in the if statement. I had put "user.name == comment.name" instead of "user.username == comment.name"
+once I corrected both these issue both buttons appeared correctly.
+2. Edit Comments Bug- Whilst trying to create this functionality I was unable to get it to correctly function without giving me a "No Reverese" or a "Page Not Found" error. After speaking to several Code Institute Tutor I found that I was trying to override the Post and Get methods and instead I should be updating the view. And after reading through and article on [GeeksForGeeks](https://www.geeksforgeeks.org/) I was able to write the correct code.
+
+#### Unresolved Bugs
+- Through testing and validations I don't believe that there is any unresolved bugs on the site.
 
 ## Deployment
 The program was developed in Codeanywhere. It was then commited and pushed to GitHub periodically.
