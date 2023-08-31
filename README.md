@@ -16,7 +16,7 @@ On the site, admin can:
 
 This has been developed as my 4th Portfollio Project for my Full Stack Software Development Diploma with Code Institute.
 
-The project can be viewed here: [Otaku Blog]()
+The project can be viewed here: [Otaku Blog](https://otaku-blog-3f79f19c74fc.herokuapp.com/)
 
 
 ## Table Of Content
@@ -44,6 +44,11 @@ The project can be viewed here: [Otaku Blog]()
     - [Browser Testing](#browser-testing)
     - [Feature Testing](#feature-testing)
     - [Bugs](#bugs)
+6. [Deployment](#deployment)
+7. [Credit](#credit)
+    - [Content](#content)
+    - [Code](#code)
+8. [Acknowledgements](#acknowledgements)
 
 
 ## User Experience
@@ -258,3 +263,38 @@ The website was tested on the following browsers with no issues:
 - Microsoft Edge
 ### Feature Testing
 ### Bugs
+
+## Deployment
+The program was developed in Codeanywhere. It was then commited and pushed to GitHub periodically.
+The finished project was then deployed to Heroku. 
+Deployment to Heroku was completed using the following steps: 
+1. Open and login to [Heroku](https://id.heroku.com/login).
+2. From the dashboard, click 'New', then click 'Create new app' from the dropdown menu. 
+3. Enter the App name, choose a region, then click 'Create app'.
+4. Navigate to the 'Settings' tab.
+5. Within 'Settings', navigate to 'Convig Vars'. Click 'Reveal Config Vars'.
+6. Add config vars using the 'KEY' and 'VALUE' pairs from env.py.
+7. Navigate to the 'Deploy' tab. 
+8. Within 'Deploy', navigate to 'Deployment method'. 
+9. Click on 'GitHub'. Navigate to 'Connect to GitHub' and click 'Connect to GitHub' 
+10. Within 'Connect to GitHub', use the search function to find the repository to be deployed. Click 'Connect'.
+11. Navigate to either 'Automatic Deploys' or 'Manual Deploys' to choose which method to deploy the application.
+12. Click on 'Enable Automatic Deploys' or 'Deploy Branch' respectively, depending on chosen method. 
+13. Once the app is finished building, a message saying 'Your app was successfully deployed' will appear.
+14. Click 'View' to see the deployed app. 
+
+## Credit
+### Content
+- All other content was written by the developer.
+
+### Code
+- [GeeksForGeeks](https://www.geeksforgeeks.org/):
+  - The information on this site was used in the creating the comment "Edit" and "Delete" functionality.
+- [Code Institute](https://codeinstitute.net/):
+  - Code Insitute full stack walkthrough projects were referred to when setting up the project. Elements of these projects were used and adapted to suit this project.
+- [Bootstrap5](https://getbootstrap.com/): was used to add elements including cards for the posts and the navigation bar. 
+- [Django](https://www.djangoproject.com/): documentation was referred to throughout development. 
+
+## Acknowledgements
+- Thank you to Oisin, Holly and Joanne from Code Institute Tutor Support for helping me along the way. 
+- Thank you to Code Institute for providing me with the tools and skills to complete this project. 

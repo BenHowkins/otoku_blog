@@ -13,7 +13,8 @@ a {
 }
 
 .navbar-toggler {
-    color: #E9EBEC;
+    background-color: #752D76;
+    border: 1px solid black;
 }
 
 .nav-link {
