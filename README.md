@@ -144,8 +144,8 @@ The  entity relationship diagram below was created using [dbdigram](https://dbdi
 - On a mobile device the featured image doesn't appear on the page.
 - The page displays the review/ post left. 
 - If the user is logged in the 'Leave a comment' box appears and allows user to add a comment on the post. 
-- Users can also like others peoples reviews if they are logged in.
-- If the user has made a comment then a buttons allowing them to Edit or Delete their comment will be seen.<br>
+- Users can also like others peoples comments if they are logged in.
+- If the user has made a comment then buttons allowing them to Edit or Delete their comment will be seen.<br>
 <image src="assets/readme/post_detail_page_top.png" width="650px"></image><br>
 <image src="assets/readme/post_detail_page_bottom.png" width="650px"></image>
 
@@ -178,6 +178,7 @@ The  entity relationship diagram below was created using [dbdigram](https://dbdi
 - [Jinja Templating Langugage](https://jinja.palletsprojects.com/en/3.1.x/)
 
 ### Frameworks, Libraries and Programmes
+- [Font Awesome](https://fontawesome.com/): this was used to add likes and comments icons to the post detail and home pages to enhance user experience
 - [Coolers](https://coolors.co/): this was used to create a colour pallete for the website. 
 - [Django](https://www.djangoproject.com/): this was the MVC web framework used.
 - [Bootstrap 5](https://getbootstrap.com/): this was the CSS framework used to make the site responsive. 
@@ -272,13 +273,84 @@ The following validators were used to test the code:
   - Jumper EZbook S5 Max
   - OPPO A54
   - Amazon Kindle Fire
+
 ### Browser Testing
 The website was tested on the following browsers with no issues:
 - Google Chrome
 - Avast Secure Browser
 - Mozilla Firefox
 - Microsoft Edge
+
 ### Feature Testing
+The following manual tests were carried out:
+#### General: base.html
+TEST       | DESIRED RESULT          | PASS/FAIL |
+---------- | ----------------------- | --------- |
+Logo | When the logo is clicked, the user is brought back to the home page | PASS
+Mobile menu | On mobile devices, a burger menu is used to display nav links | PASS
+Register nav link | Brings the user to the signup page | PASS
+Login nav link | Brings the user to the login page | PASS
+Logout nav link | Brings the user to the logout page | PASS
+Footer links | When clicked, footer links open in a new browser window | PASS
+
+#### Home Page: index.html
+TEST       | DESIRED RESULT          | PASS/FAIL |
+---------- | ----------------------- | --------- |
+Post Card | A card for each post is visible containing: Feature image, Author's Name, Post's Title, Post Excerpt, Published Date, Number Of LIkes | PASS
+Post Card Link | When the title of the card is clicked, the user is brought to the post detail page for the post | PASS
+Number Of Likes | The number of likes on the card should be the same as that on the post detail page | PASS
+Page Pagination | The post cards should be in rows of 3 posts per row and should have page navigation appear when more than 6 posts are visable | PASS
+
+#### Post Detail Page: post_detail.html
+TEST       | DESIRED RESULT          | PASS/FAIL |
+---------- | ----------------------- | --------- |
+Post Details | The top of the page should display: Author's Name, Post Title, Excerpt and Date Published on the left side of the screen and the Featured Image on the right | PASS
+Post Body | The post itself should be displayed directly below the details card | PASS
+Likes And Comments Counter | Icons and counters displaying the current number of likes and comment the post has should be visible below the post | PASS
+Like And Unlike |  When a user has an account and is logged in they are able to click on the like icon and like the post or click it again and unlike the post | PASS
+Leave A Comment Section | If the user has an account and is logged in then there will be a box visable for them to leave a comment. If they aren't logged in the box won't appear | PASS
+Comment Authorisation | All comments when left shouldn't display automatically but should show a message stating they are "Await Approval". Once approval is given they should then appear on the page | PASS
+Comment List | All approved comment should appear down the left side of the screen in order of creation with the oldest comment at the top and getting newer as you go down, to easily follow the conversation | PASS
+Comment Edit Button | A button should appear below any comment a logged in user has made named "Edit". This should take them to the comment edit page. This button should only appear on comments they have made | PASS
+Delete Comment Button | A button should appear below any comment a logged in user has made "Delete". This should take them to the comment delete page. This button should only appear on comments they have made | PASS
+
+#### Comment Edit Page: comment_edit.html
+TEST       | DESIRED RESULT          | PASS/FAIL |
+---------- | ----------------------- | --------- |
+Edit Comment Message | The user should be welcomed with a personalised message containing their username stating that they can change their comment | PASS
+Comment Edit Box | A textbox should be visable, displaying the original message and allowing the user to make alterations | PASS
+Confirmation Button | A button should be visable below the textbox labelled "Update Comment" which confirms any changes made | PASS
+Site Redirection | After pushing the button the user should be redirected back to the home page | PASS
+
+#### Comment Delete Page: comment_delete.html
+TEST       | DESIRED RESULT          | PASS/FAIL |
+---------- | ----------------------- | --------- |
+Edit Comment Message | The user should be welcomed with a personalised message containing their username stating that they are deleting their comment and this is unreversable | PASS
+Confirmation Button | A button should be visable below the message labelled "Delete Comment" which confirms deletion of the comment | PASS
+Site Redirection | After pushing the button the user should be redirected back to the home page | PASS
+
+#### Register Page: signup.html
+TEST       | DESIRED RESULT          | PASS/FAIL |
+---------- | ----------------------- | --------- |
+Register Message | The user should be welcomed with a message saying welcome back to the page and told if they already have an account to log in with a link to the log in page or sign up below if they don't have an account | PASS
+Input Details | There should be labeled boxes for the user to input a username, an email address if they wish too and to input a password and another password field to confirm the password match. There is also a submit button to confirm entry of the details | PASS
+Input Autherisation | After the submit button is pushed the site will check the data input against the database. If the passwords match and the username is unique the user will be redirected to the home page. If the username is taken the user will be informed it has been taken and asked to pick another one. If the passwords don't match the user will be told they didn't match and asked to try again | PASS
+Site Redirection | After pushing the submit button with correct details, the user should be redirected back to the home page and a message should display stating they have signed in with their username | PASS
+
+#### Login Page: login.html
+TEST       | DESIRED RESULT          | PASS/FAIL |
+---------- | ----------------------- | --------- |
+Login Message | The user should be welcomed with a message saying welcome back and log in or sign up with a link to the register page if they don't have an account | PASS
+Input Details | There should be labeled boxes for the user's username and password and a submit button to confirm entry of the details | PASS
+Input Autherisation | After the submit button is pushed the site will check the data input against the database. If the data is correct the user is redirected back to the home page, if it is incorrect a message will appear stating that either the username and/ or password are incorrect and allow the user to try again | PASS
+Site Redirection | After pushing the submit button with correct details, the user should be redirected back to the home page and a message should display stating they have signed in with their username | PASS
+
+#### Logout Page: logout.html
+TEST       | DESIRED RESULT          | PASS/FAIL |
+---------- | ----------------------- | --------- |
+Logout Message | The user should be welcomed with a message stating that they are logging out of their account and see if they are sure | PASS
+Confirmation Button | A button should be visable below the message labelled "Log Out" which logs the user out of their account | PASS
+Site Redirection | After pushing the button the user should be redirected back to the home page and a message should display stating they have signed out | PASS
 
 ### Bugs
 #### Resolved Bugs
