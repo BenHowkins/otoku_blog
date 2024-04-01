@@ -6,7 +6,7 @@ from .models import Post, Comment
 from .forms import CommentForm
 
 
-class AddPost(View):
+class AddPost(CreateView):
     model = Post
     template_name = 'add_post.html'
     fields = [
