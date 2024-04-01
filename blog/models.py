@@ -11,6 +11,7 @@ class Categories(models.Model):
     def __str__(self):
         return self.name
 
+
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -19,7 +20,7 @@ class Post(models.Model):
     )
     featured_image = CloudinaryField('image', default='placeholder')
     category = models.CharField(max_length=200, default='Undefined')
-    excerpt = models.TextField(blank=True)
+    excerpt = models.TextField(blank=True, max_length=200)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
