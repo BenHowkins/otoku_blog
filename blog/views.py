@@ -12,7 +12,6 @@ class AddPost(CreateView):
     fields = [
         'title',
         'featured_image',
-        'category',
         'excerpt',
         'content',
     ]

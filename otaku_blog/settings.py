@@ -28,14 +28,14 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = [
     'otaku-blog-3f79f19c74fc.herokuapp.com', 'localhost',
     '8000-benhowkins-otoku-blog-ju5ule3vxh.us2.codeanyapp.com',
-    '8000-benhowkins-otokublog-uj26q6h4i19.ws-eu110.gitpod.io',
+    '8000-benhowkins-otokublog-o1slkcq95f8.ws-eu110.gitpod.io',
     ]
 
 
