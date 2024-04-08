@@ -57,6 +57,10 @@ a {
     position: relative;
 }
 
+.card-img-top {
+    max-height: 300px;
+}
+
 .image-flash {
     position: absolute;
     bottom: 5%;
@@ -89,6 +93,12 @@ a {
 .masthead-image {
     position: relative;
     overflow: hidden;
+}
+
+.card-text-detail {
+    border: 1px solid black;
+    background-color: #23BBBB;
+    padding: 15px;
 }
 
 .post-link {

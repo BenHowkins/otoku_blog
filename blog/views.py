@@ -3,18 +3,15 @@ from django.views import generic, View
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 
 
 class AddPost(CreateView):
     model = Post
     template_name = 'add_post.html'
-    fields = [
-        'title',
-        'featured_image',
-        'excerpt',
-        'content',
-    ]
+    form_class = PostForm # use PostForm from forms.py
+
+    success_url= '/'
 
 
 class PostList(generic.ListView):
