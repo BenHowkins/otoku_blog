@@ -21,6 +21,9 @@ class Post(models.Model):
     )
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True, max_length=200)
+    category = models.ForeignKey(
+        Categories, on_delete=models.CASCADE, related_name="categories"
+    )
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)

@@ -3,6 +3,8 @@ from .models import Post, Comment, Categories
 from django_summernote.admin import SummernoteModelAdmin
 
 
+admin.site.register(Categories)
+
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
 

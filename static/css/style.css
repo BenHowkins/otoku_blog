@@ -95,12 +95,6 @@ a {
     overflow: hidden;
 }
 
-.card-text-detail {
-    border: 1px solid black;
-    background-color: #23BBBB;
-    padding: 15px;
-}
-
 .post-link {
     text-decoration: none;
     color: #4F759B;
