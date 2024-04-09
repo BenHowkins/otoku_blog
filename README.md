@@ -134,6 +134,20 @@ The  entity relationship diagram below was created using [dbdigram](https://dbdi
   <image src="assets/readme/home_page_top.png" width="650px"></image><br>
   <image src="assets/readme/home_page_bottom.png" width="650px"></image>
 
+### Add Post Page
+- This page displays a form which allows users to submit their own posts/ reviews.
+- The form includes the following fields for input:
+    - The post's title
+    - The post's slug
+    - The author's name
+    - A selector for the featured image
+    - The post's excerpt
+    - The post's content
+- The Title, Slug, Author and Content fields are labeled with a * to indicate they are required.
+- The bootom of the form has a Submit button which when pushed with a correctly filled out form will submit the post for approval and  sends the user back to the home screen.<br>
+<image src="assets/readme/add_post_page_top.png" width="650px"></image>
+<image src="assets/readme/add_post_page_bottom.png" width="650px"></image>
+
 ### Post Detail Page
 - The following data displays at the top of the page:
     - The featured image
@@ -259,12 +273,12 @@ A list of packages and dependencies can be found in the requirements.txt file.
 
 ### Code Validation
 The following validators were used to test the code:
-- [W3C Markup Validator](https://validator.w3.org/): Apart from o errors were reported when passing the final HTML code through the validator. 
+- [W3C Markup Validator](https://validator.w3.org/): No errors were reported when passing the final HTML code through the validator. 
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/): No errors were reported when passing the final CSS code through the validator. <br>
 - [CI Python Linter](https://pep8ci.herokuapp.com//): No errors were reported when passing the final python code through the validator.  <br>
 
 #### Unresolved HTML Error
-- When passing the final HTML code through the validator, an error appeared stating that there was no alt tags in any of the images on the site. However, the code was written with an if/ else statement. This stated that if there wasn't a set featured image then the placeholder image is used instead, so an alterenative is given to all images just in a different part of the code.
+- Upon passing through the validator, no error were shown.
 #### Unresolved Python Error
 - When passing the py files through the validator, it stated that the env.py and settings.py had a total of 7 lines deemed 'too long', however these lines were either names of password validators or names of keys, so were all left as they were.
 
@@ -300,6 +314,15 @@ Post Card | A card for each post is visible containing: Feature image, Author's 
 Post Card Link | When the title of the card is clicked, the user is brought to the post detail page for the post | PASS
 Number Of Likes | The number of likes on the card should be the same as that on the post detail page | PASS
 Page Pagination | The post cards should be in rows of 3 posts per row and should have page navigation appear when more than 6 posts are visable | PASS
+
+#### Add Post Page: add_post.html
+TEST       | DESIRED RESULT          | PASS/FAIL |
+---------- | ----------------------- | --------- |
+Register Message | The user should be welcomed with a message saying welcome back to the page and told to fill out the form below if they wish to leavee a post of their own | PASS
+Input Form | There should be a labeled form for the user to input a Title for the post, a Slug name, select the Author of the post, select an Image, create an Exerpt decription and the post Content itself with the Title, Slug, Author and Content all being starred to indicate they are authorised fields  | PASS
+Confirmation Button | A button should be visable below the message labelled "Submit" which confirms submission of the review | PASS
+Data Input Autherisation | After the submit button is pushed the site will check all the required fields have data entered in them and also check the data input against the database to see there is no repeated Titles or Slugs being used. If either of these things happen a error message will appear under the offending field saying either that this field is required or this Title or Slug has been used and to select another one  | PASS
+Site Redirection | After pushing the submit button with correct details, the user should be redirected back to the home page | PASS
 
 #### Post Detail Page: post_detail.html
 TEST       | DESIRED RESULT          | PASS/FAIL |
@@ -395,5 +418,5 @@ Deployment to Heroku was completed using the following steps:
 - [Django](https://www.djangoproject.com/): documentation was referred to throughout development. 
 
 ## Acknowledgements
-- Thank you to Oisin, Holly and Joanne from Code Institute Tutor Support for helping me along the way. 
+- Thank you to Oisin, Holly, Roo and Joanne from Code Institute Tutor Support for helping me along the way. 
 - Thank you to Code Institute for providing me with the tools and skills to complete this project. 

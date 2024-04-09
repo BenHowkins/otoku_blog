@@ -10,7 +10,6 @@ class AddPost(CreateView):
     model = Post
     template_name = 'add_post.html'
     form_class = PostForm # use PostForm from forms.py
-
     success_url= '/'
 
 
