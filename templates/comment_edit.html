@@ -16,8 +16,8 @@
                 Then go right ahead!!
             </p>
             <!-- edit comment form -->
-            <form method="post">
-                {{ form.as_p }}
+            <form method="post" enctype="multipart/form-data">
+                {{ form|crispy }}
                 {% csrf_token %}
                 <button type="submit" class="btn btn-signup">Update Review</button>
             </form>

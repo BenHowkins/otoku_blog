@@ -101,11 +101,14 @@ Following MoSCoW Priortisation principles, each User Story was assigned a tag fr
 - Won't Have
 
 ### Models
-The project uses created two models, Post and Comment. It also uses the Django allauth User model.
+The project uses five created models consisting of two main models: Post and Comment and three submodels: Categories, Opinions and Choices. It also uses the Django allauth User model.
 1. The Post model stores the blog post data:
 - author is a foreign key connecting to the User model.
+- category is a foreign key connecting to the Categories model.
+- opinion is a foreign key connecting to the Opinions model.
 2. The Comment model stores the data regarding comments made on the blog posts:
 - post is a foreign key connecting to the Post model.
+- choice is a foreign key connecting to the Choices model.
 
 The  entity relationship diagram below was created using [dbdigram](https://dbdiagram.io/home) and demonstrates the relationship between the models. <br>
 <image src="assets/readme/fst_project_diagram.png" width="650px"></image>
@@ -140,11 +143,13 @@ The  entity relationship diagram below was created using [dbdigram](https://dbdi
     - The post's title
     - The post's slug
     - The author's name
+    - The post's category
     - A selector for the featured image
     - The post's excerpt
     - The post's content
-- The Title, Slug, Author and Content fields are labeled with a * to indicate they are required.
-- The bootom of the form has a Submit button which when pushed with a correctly filled out form will submit the post for approval and  sends the user back to the home screen.<br>
+    - The final opinion
+- The Title, Slug, Author, Category, Content and Opinion fields are labeled with a * to indicate they are required.
+- The bottom of the form has a Submit button which when pushed with a correctly filled out form will submit the post for approval and  sends the user back to the home screen.<br>
 <image src="assets/readme/add_post_page_top.png" width="650px"></image>
 <image src="assets/readme/add_post_page_bottom.png" width="650px"></image>
 
@@ -153,11 +158,13 @@ The  entity relationship diagram below was created using [dbdigram](https://dbdi
     - The featured image
     - The author's name
     - The post's title
+    - The post's category
     - The post excerpt
     - The published date
 - On a mobile device the featured image doesn't appear on the page.
-- The page displays the review/ post left. 
-- If the user is logged in the 'Leave a comment' box appears and allows user to add a comment on the post. 
+- The page displays the review/ post below the card.
+- Below the review/ post is a final opinion of the product spilit into "Buy", "Borrow" or "Bin" 
+- If the user is logged in the 'Leave a comment' box appears and allows user to add a comment on the post as well as choosing if they agree or disagree with the review. 
 - Users can also like others peoples comments if they are logged in.
 - If the user has made a comment then buttons allowing them to Edit or Delete their comment will be seen.<br>
 <image src="assets/readme/post_detail_page_top.png" width="650px"></image><br>
@@ -176,7 +183,7 @@ The  entity relationship diagram below was created using [dbdigram](https://dbdi
 <image src="assets/readme/sign_out_page.png" width="650px"></image>
 
 ### Edit Comment Page
-- This page displays a text box showing the user's current comment which they have wish to edit and allows them to make the alterations before clicking the submit button, editing the comment and sending the user back to the home screen.<br>
+- This page displays a text box showing the user's current comment which they have wish to edit and allows them to make the alterations before clicking the submit button, editing the comment and sending the user back to the home screen. They may also change their choice to the agree with review question.<br>
 <image src="assets/readme/edit_comment_page.png" width="650px"></image>
 
 ### Delete Comment Page

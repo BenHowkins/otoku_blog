@@ -79,7 +79,8 @@ class EditComment(UpdateView):
     model = Comment
     template_name = 'comment_edit.html'
     fields = [
-        "body"
+        "body",
+        "choice"
     ]
     success_url = '/'
 

@@ -12,6 +12,18 @@ class Categories(models.Model):
     def __str__(self):
         return self.name
 
+class Opinions(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+class Choices(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -23,6 +35,9 @@ class Post(models.Model):
     excerpt = models.TextField(blank=True, max_length=200)
     category = models.ForeignKey(
         Categories, on_delete=models.CASCADE, related_name="categories"
+    )
+    opinion = models.ForeignKey(
+        Opinions, on_delete=models.CASCADE, related_name="opinions"
     )
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
@@ -50,6 +65,9 @@ class Comment(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(default="johndoe@example.com")
     body = models.TextField()
+    choice = models.ForeignKey(
+        Choices, on_delete=models.CASCADE, related_name="choices"
+    )
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 
